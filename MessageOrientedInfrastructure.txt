@@ -1,0 +1,52 @@
+Message Oriented Infrastructure
+===============================
+
+We are entering a world in which distributed systems will soon contain
+entire data centers worth of processors in edge applications.  This 
+"data center at the edge" is born out of the combination of large numbers
+of sensors with edge based machine learning applications to exploit the
+data in situ, rather than attempting to back haul vast quantities of data
+to a central processing location.  By moving the processing to the edge,
+we mimic biological systems and provide autonomic functions, filtering out
+the less interesting data, providing only the important decision points
+back to the central functional units.
+
+To support this design, we have been working on a new class of system
+architecture geared towards processing Internet scale data in small 
+form factors.  Our goals of supporting machine learning applications 
+involving billions of messages per second and millions of models, have
+lead us to reevaluate our basic assumptions concerning how to engineer
+reliable systems at these scales.  The emergent architecture our experiments
+have lead us towards is what we are calling a Message Oriented Infrastructure
+(MOI). 
+
+A Message Oriented Infrastructure is a system design which is focused on
+communication as the basis of computation.  Programming such a system is
+less concerned with the sequence of individual instructions, but on the 
+continuous flow of information between functional units in the system. MOI
+systems are inherently asynchronous, concurrent, and distributed. 
+
+Terms
+-----
+
+* message - a collection of data
+* stream - a sequence of messages 
+* object - a functional unit which interacts with messages
+* source - an object which sends messages
+* sink - an object which receives messages
+* relay - an object which sends the messages it receives
+* wire - a relay which sends messages point to point
+* bus - a relay which sends messages from many to many 
+* filter - a relay which selectively sends messages it receives
+* hub - a relay which sends multiple messages for each it receives
+* router - a relay which selectively send multiple messages
+* transform - an relay which applies a function to each message
+* decorator - a relay that adds information to each message
+* pool - a collection of objects which receive the same messages
+* net(work) - a collection of relays
+* sensor - a source which collects data from the world around it
+* mech(anism) - a sink which affects the world around it
+* (ro)bot - a collection of objects which interacts with the world around it
+
+
+
